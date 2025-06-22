@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://i.ibb.co/Y7KXmM1f/Chat-GPT-Image-22-6-2025-18-43-12.png" alt="Chat-GPT-Image-22-6-2025-18-43-12" border="0" width="600px">
+  <img src="https://i.ibb.co/wNb7VXPp/Chat-GPT-Image-22-6-2025-18-43-12.png" alt="Chat-GPT-Image-22-6-2025-18-43-12" border="0" width="600px">
   <br>
 </h1>
 
