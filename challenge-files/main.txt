@@ -1,0 +1,92 @@
+customasm v0.13.9 (x86_64-unknown-linux-gnu)
+assembling `main.asm`...
+
+  outp | addr | data (base 16)
+
+   0:0 |    0 | 00 00 00 00 ; nop
+   4:0 |    1 | 48 20 01 01 ; movhw rA, 0x0101
+   8:0 |    2 | c0 40 00 ff 48 42 ff ff ; movl rB, 0xffffff
+  10:0 |    4 | f8 22 00 00 ; draw rA, rB
+  14:0 |    5 | 00 00 00 00 ; nop
+  18:0 |    6 | 00 00 00 00 ; nop
+  1c:0 |    7 | fc 00 00 00 ; draw clear
+  20:0 |    8 | 00 22 00 00 ; not rA, rB
+  24:0 |    9 | 48 20 00 11 ; movhw rA, 0x11
+  28:0 |    a | 48 40 00 22 ; movhw rB, 0x22
+  2c:0 |    b | 04 61 10 00 ; xor rC, rA, rB
+  30:0 |    c | 08 81 10 00 ; or rD, rA, rB
+  34:0 |    d | 0c a1 20 00 ; and rE, rA, rD
+  38:0 |    e | 10 c5 00 00 ; shl rF, rE
+  3c:0 |    f | 14 e6 00 00 ; shr rG, rF
+  40:0 |   10 | 18 c7 00 00 ; rotl rF, rG
+  44:0 |   11 | 1d 07 00 00 ; rotr rH, rG
+  48:0 |   12 | 21 21 10 00 ; add rI, rA, rB
+  4c:0 |   13 | 25 49 10 00 ; sub rJ, rI, rB
+  50:0 |   14 | 29 61 00 00 ; inc rK, rA
+  54:0 |   15 | 2d 8b 00 00 ; dec rL, rK
+  58:0 |   16 | 31 ae 08 80 ; mul rM, rN, rA, rB
+  5c:0 |   17 | 48 21 00 44 ; ori rA, rA, 0x44
+  60:0 |   18 | 4c 21 00 33 ; andi rA, rA, 0x33
+  64:0 |   19 | 61 ad 00 02 ; addi rM, rM, 0x2
+  68:0 |   1a | 80 22 00 00 ; mov rA, rB
+  6c:0 |   1b | 48 60 00 4e ; movhw rC, end
+  70:0 |   1c | 94 61 00 00 ; sw [rC], rA
+  74:0 |   1d | 9c 83 00 00 ; lw rD, [rC]
+  78:0 |   1e | 48 e0 00 01 ; movhw rG, 1
+  7c:0 |   1f | 48 80 00 25 ; movhw rD, jmp1
+  80:0 |   20 | a0 80 00 00 ; jmp rD
+  84:0 |   21 | 00 00 00 00 ; nop
+  88:0 |   22 | 00 00 00 00 ; nop
+  8c:0 |   23 | 00 00 00 00 ; nop
+  90:0 |   24 | 00 00 00 00 ; nop
+  94:0 |   25 |             ; jmp1:
+  94:0 |   25 | 48 80 00 2c ; movhw rD, jmp2
+  98:0 |   26 | 04 01 08 00 ; xor r0, rA, rA
+  9c:0 |   27 | a8 80 00 00 ; jz rD
+  a0:0 |   28 | 00 00 00 00 ; nop
+  a4:0 |   29 | 00 00 00 00 ; nop
+  a8:0 |   2a | 00 00 00 00 ; nop
+  ac:0 |   2b | 00 00 00 00 ; nop
+  b0:0 |   2c |             ; jmp2:
+  b0:0 |   2c | 48 80 00 33 ; movhw rD, jmp3
+  b4:0 |   2d | 04 01 08 00 ; xor r0, rA, rA
+  b8:0 |   2e | ac 80 00 00 ; jnz rD
+  bc:0 |   2f | 00 00 00 00 ; nop
+  c0:0 |   30 | 00 00 00 00 ; nop
+  c4:0 |   31 | 00 00 00 00 ; nop
+  c8:0 |   32 | 00 00 00 00 ; nop
+  cc:0 |   33 |             ; jmp3:
+  cc:0 |   33 | e0 00 00 38 ; jmpi jmp4
+  d0:0 |   34 | 00 00 00 00 ; nop
+  d4:0 |   35 | 00 00 00 00 ; nop
+  d8:0 |   36 | 00 00 00 00 ; nop
+  dc:0 |   37 | 00 00 00 00 ; nop
+  e0:0 |   38 |             ; jmp4:
+  e0:0 |   38 | 04 01 08 00 ; xor r0, rA, rA
+  e4:0 |   39 | e8 00 00 3e ; jzi jmp5
+  e8:0 |   3a | 00 00 00 00 ; nop
+  ec:0 |   3b | 00 00 00 00 ; nop
+  f0:0 |   3c | 00 00 00 00 ; nop
+  f4:0 |   3d | 00 00 00 00 ; nop
+  f8:0 |   3e |             ; jmp5:
+  f8:0 |   3e | 04 01 08 00 ; xor r0, rA, rA
+  fc:0 |   3f | ec 00 00 44 ; jnzi jmp6
+ 100:0 |   40 | 00 00 00 00 ; nop
+ 104:0 |   41 | 00 00 00 00 ; nop
+ 108:0 |   42 | 00 00 00 00 ; nop
+ 10c:0 |   43 | 00 00 00 00 ; nop
+ 110:0 |   44 |             ; jmp6:
+ 110:0 |   44 | f0 20 00 00 ; read rA
+ 114:0 |   45 | 00 00 00 00 ; nop
+ 118:0 |   46 | 00 00 00 00 ; nop
+ 11c:0 |   47 | 00 00 00 00 ; nop
+ 120:0 |   48 | fc 00 00 00 ; draw clear
+ 124:0 |   49 | 48 20 00 00 ; movhw rA, 0
+ 128:0 |   4a |             ; loop:
+ 128:0 |   4a | f8 21 00 00 ; draw rA, rA
+ 12c:0 |   4b | 28 21 00 00 ; inc rA, rA
+ 130:0 |   4c | e0 00 00 4a ; jmpi loop
+ 134:0 |   4d | 00 00 00 00 ; nop
+ 138:0 |   4e |             ; end:
+
+resolved in 4 iterations
